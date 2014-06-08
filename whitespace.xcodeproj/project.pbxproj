@@ -22,6 +22,9 @@
 		DA9814B4194036B60083AB48 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA981493194036B60083AB48 /* UIKit.framework */; };
 		DA9814BC194036B60083AB48 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA9814BA194036B60083AB48 /* InfoPlist.strings */; };
 		DA9814BE194036B60083AB48 /* whitespaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9814BD194036B60083AB48 /* whitespaceTests.m */; };
+		DA9814C9194053EB0083AB48 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9814C8194053EB0083AB48 /* ThirdViewController.m */; };
+		DAAB88C119410985008A16CE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAB88BF19410985008A16CE /* ViewController.m */; };
+		DAAB88C219410985008A16CE /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAAB88C019410985008A16CE /* ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,12 @@
 		DA9814B9194036B60083AB48 /* whitespaceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "whitespaceTests-Info.plist"; sourceTree = "<group>"; };
 		DA9814BB194036B60083AB48 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DA9814BD194036B60083AB48 /* whitespaceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = whitespaceTests.m; sourceTree = "<group>"; };
+		DA9814C7194053EB0083AB48 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		DA9814C8194053EB0083AB48 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		DA9814CA1940F30D0083AB48 /* whitespace.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = whitespace.entitlements; sourceTree = "<group>"; };
+		DAAB88BE19410985008A16CE /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../ViewController.h; sourceTree = "<group>"; };
+		DAAB88BF19410985008A16CE /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../ViewController.m; sourceTree = "<group>"; };
+		DAAB88C019410985008A16CE /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewController.xib; path = ../ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,13 +124,19 @@
 		DA981495194036B60083AB48 /* whitespace */ = {
 			isa = PBXGroup;
 			children = (
+				DA9814CA1940F30D0083AB48 /* whitespace.entitlements */,
 				DA98149E194036B60083AB48 /* AppDelegate.h */,
 				DA98149F194036B60083AB48 /* AppDelegate.m */,
 				DA9814A1194036B60083AB48 /* Main.storyboard */,
+				DAAB88BE19410985008A16CE /* ViewController.h */,
+				DAAB88BF19410985008A16CE /* ViewController.m */,
+				DAAB88C019410985008A16CE /* ViewController.xib */,
 				DA9814A4194036B60083AB48 /* FirstViewController.h */,
 				DA9814A5194036B60083AB48 /* FirstViewController.m */,
 				DA9814A7194036B60083AB48 /* SecondViewController.h */,
 				DA9814A8194036B60083AB48 /* SecondViewController.m */,
+				DA9814C7194053EB0083AB48 /* ThirdViewController.h */,
+				DA9814C8194053EB0083AB48 /* ThirdViewController.m */,
 				DA9814AA194036B60083AB48 /* Images.xcassets */,
 				DA981496194036B60083AB48 /* Supporting Files */,
 			);
@@ -201,9 +216,17 @@
 		DA981484194036B60083AB48 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "竹嶋健人";
 				TargetAttributes = {
+					DA98148B194036B60083AB48 = {
+						DevelopmentTeam = F924L6S3XL;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
+					};
 					DA9814AF194036B60083AB48 = {
 						TestTargetID = DA98148B194036B60083AB48;
 					};
@@ -235,6 +258,7 @@
 			files = (
 				DA9814AB194036B60083AB48 /* Images.xcassets in Resources */,
 				DA98149A194036B60083AB48 /* InfoPlist.strings in Resources */,
+				DAAB88C219410985008A16CE /* ViewController.xib in Resources */,
 				DA9814A3194036B60083AB48 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,7 +278,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAAB88C119410985008A16CE /* ViewController.m in Sources */,
 				DA9814A9194036B60083AB48 /* SecondViewController.m in Sources */,
+				DA9814C9194053EB0083AB48 /* ThirdViewController.m in Sources */,
 				DA9814A0194036B60083AB48 /* AppDelegate.m in Sources */,
 				DA9814A6194036B60083AB48 /* FirstViewController.m in Sources */,
 				DA98149C194036B60083AB48 /* main.m in Sources */,
@@ -311,7 +337,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -340,7 +365,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -350,7 +375,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -373,7 +397,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -384,10 +408,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "whitespace/whitespace-Prefix.pch";
 				INFOPLIST_FILE = "whitespace/whitespace-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -397,10 +423,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "whitespace/whitespace-Prefix.pch";
 				INFOPLIST_FILE = "whitespace/whitespace-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -408,7 +436,6 @@
 		DA9814C5194036B60083AB48 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/whitespace.app/whitespace";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -431,7 +458,6 @@
 		DA9814C6194036B60083AB48 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/whitespace.app/whitespace";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -466,6 +492,7 @@
 				DA9814C3194036B60083AB48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA9814C4194036B60083AB48 /* Build configuration list for PBXNativeTarget "whitespaceTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +501,7 @@
 				DA9814C6194036B60083AB48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

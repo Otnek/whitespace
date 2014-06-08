@@ -8,8 +8,8 @@
 
 #import "FirstViewController.h"
 
-@interface FirstViewController ()
 
+@interface FirstViewController ()
 @end
 
 @implementation FirstViewController
@@ -18,6 +18,20 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    
+    UIBarButtonItem *backBtn = [[UIBarButtonItem alloc]
+        initWithTitle:@"戻る"
+        style:UIBarButtonItemStyleBordered
+        target:nil
+        action:nil];
+    
+    self.navigationItem.backBarButtonItem = backBtn;
+    
+}
+
+
+- (IBAction)performAddBtn:(id)sender {
 }
 
 - (void)didReceiveMemoryWarning

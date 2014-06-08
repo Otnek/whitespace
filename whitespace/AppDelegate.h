@@ -6,7 +6,9 @@
 //  Copyright (c) 2014年 竹嶋健人. All rights reserved.
 //
 
+
 #import <UIKit/UIKit.h>
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
