@@ -27,6 +27,7 @@
 		DAAB890F19512B8E008A16CE /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAB890E19512B8E008A16CE /* ListViewController.m */; };
 		DAAB8912195132F4008A16CE /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAB8911195132F4008A16CE /* DataManager.m */; };
 		DAAB891519514CC0008A16CE /* ErrandCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAB891419514CC0008A16CE /* ErrandCell.m */; };
+		DAAB896119517007008A16CE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAAB896019517007008A16CE /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		DAAB8911195132F4008A16CE /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		DAAB891319514CC0008A16CE /* ErrandCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrandCell.h; sourceTree = "<group>"; };
 		DAAB891419514CC0008A16CE /* ErrandCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrandCell.m; sourceTree = "<group>"; };
+		DAAB896019517007008A16CE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAAB896119517007008A16CE /* CoreData.framework in Frameworks */,
 				DA981492194036B60083AB48 /* CoreGraphics.framework in Frameworks */,
 				DA981494194036B60083AB48 /* UIKit.framework in Frameworks */,
 				DA981490194036B60083AB48 /* Foundation.framework in Frameworks */,
@@ -119,6 +122,7 @@
 		DA98148E194036B60083AB48 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DAAB896019517007008A16CE /* CoreData.framework */,
 				DA98148F194036B60083AB48 /* Foundation.framework */,
 				DA981491194036B60083AB48 /* CoreGraphics.framework */,
 				DA981493194036B60083AB48 /* UIKit.framework */,
