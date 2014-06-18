@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@class Errand;
 
+@interface EditViewController : UIViewController
+@property(strong, nonatomic) Errand *errand;
+@property(strong, nonatomic) NSManagedObjectContext *managedContext;
 @end

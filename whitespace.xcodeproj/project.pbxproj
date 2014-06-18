@@ -14,17 +14,19 @@
 		DA98149C194036B60083AB48 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA98149B194036B60083AB48 /* main.m */; };
 		DA9814A0194036B60083AB48 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA98149F194036B60083AB48 /* AppDelegate.m */; };
 		DA9814A3194036B60083AB48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA9814A1194036B60083AB48 /* Main.storyboard */; };
-		DA9814A6194036B60083AB48 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9814A5194036B60083AB48 /* FirstViewController.m */; };
-		DA9814A9194036B60083AB48 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9814A8194036B60083AB48 /* SecondViewController.m */; };
+		DA9814A6194036B60083AB48 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9814A5194036B60083AB48 /* ResultViewController.m */; };
 		DA9814AB194036B60083AB48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA9814AA194036B60083AB48 /* Images.xcassets */; };
 		DA9814B2194036B60083AB48 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9814B1194036B60083AB48 /* XCTest.framework */; };
 		DA9814B3194036B60083AB48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA98148F194036B60083AB48 /* Foundation.framework */; };
 		DA9814B4194036B60083AB48 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA981493194036B60083AB48 /* UIKit.framework */; };
 		DA9814BC194036B60083AB48 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA9814BA194036B60083AB48 /* InfoPlist.strings */; };
 		DA9814BE194036B60083AB48 /* whitespaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9814BD194036B60083AB48 /* whitespaceTests.m */; };
-		DA9814C9194053EB0083AB48 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9814C8194053EB0083AB48 /* ThirdViewController.m */; };
-		DAAB88C119410985008A16CE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAB88BF19410985008A16CE /* ViewController.m */; };
-		DAAB88C219410985008A16CE /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAAB88C019410985008A16CE /* ViewController.xib */; };
+		DAAB88C119410985008A16CE /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAB88BF19410985008A16CE /* EditViewController.m */; };
+		DAAB890919512353008A16CE /* whitespace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAAB890719512353008A16CE /* whitespace.xcdatamodeld */; };
+		DAAB890C19512575008A16CE /* Errand.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAB890B19512575008A16CE /* Errand.m */; };
+		DAAB890F19512B8E008A16CE /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAB890E19512B8E008A16CE /* ListViewController.m */; };
+		DAAB8912195132F4008A16CE /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAB8911195132F4008A16CE /* DataManager.m */; };
+		DAAB891519514CC0008A16CE /* ErrandCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAB891419514CC0008A16CE /* ErrandCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,22 +51,26 @@
 		DA98149E194036B60083AB48 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DA98149F194036B60083AB48 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DA9814A2194036B60083AB48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DA9814A4194036B60083AB48 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		DA9814A5194036B60083AB48 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		DA9814A7194036B60083AB48 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		DA9814A8194036B60083AB48 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		DA9814A4194036B60083AB48 /* ResultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
+		DA9814A5194036B60083AB48 /* ResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
 		DA9814AA194036B60083AB48 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA9814B0194036B60083AB48 /* whitespaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = whitespaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA9814B1194036B60083AB48 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		DA9814B9194036B60083AB48 /* whitespaceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "whitespaceTests-Info.plist"; sourceTree = "<group>"; };
 		DA9814BB194036B60083AB48 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DA9814BD194036B60083AB48 /* whitespaceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = whitespaceTests.m; sourceTree = "<group>"; };
-		DA9814C7194053EB0083AB48 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
-		DA9814C8194053EB0083AB48 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		DA9814CA1940F30D0083AB48 /* whitespace.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = whitespace.entitlements; sourceTree = "<group>"; };
-		DAAB88BE19410985008A16CE /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../ViewController.h; sourceTree = "<group>"; };
-		DAAB88BF19410985008A16CE /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../ViewController.m; sourceTree = "<group>"; };
-		DAAB88C019410985008A16CE /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewController.xib; path = ../ViewController.xib; sourceTree = "<group>"; };
+		DAAB88BE19410985008A16CE /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditViewController.h; path = ../EditViewController.h; sourceTree = "<group>"; };
+		DAAB88BF19410985008A16CE /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditViewController.m; path = ../EditViewController.m; sourceTree = "<group>"; };
+		DAAB890819512353008A16CE /* whitespace.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = whitespace.xcdatamodel; sourceTree = "<group>"; };
+		DAAB890A19512575008A16CE /* Errand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Errand.h; sourceTree = "<group>"; };
+		DAAB890B19512575008A16CE /* Errand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Errand.m; sourceTree = "<group>"; };
+		DAAB890D19512B8E008A16CE /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		DAAB890E19512B8E008A16CE /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		DAAB8910195132F4008A16CE /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		DAAB8911195132F4008A16CE /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		DAAB891319514CC0008A16CE /* ErrandCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrandCell.h; sourceTree = "<group>"; };
+		DAAB891419514CC0008A16CE /* ErrandCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrandCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,18 +133,22 @@
 				DA9814CA1940F30D0083AB48 /* whitespace.entitlements */,
 				DA98149E194036B60083AB48 /* AppDelegate.h */,
 				DA98149F194036B60083AB48 /* AppDelegate.m */,
+				DAAB8910195132F4008A16CE /* DataManager.h */,
+				DAAB8911195132F4008A16CE /* DataManager.m */,
 				DA9814A1194036B60083AB48 /* Main.storyboard */,
-				DAAB88BE19410985008A16CE /* ViewController.h */,
-				DAAB88BF19410985008A16CE /* ViewController.m */,
-				DAAB88C019410985008A16CE /* ViewController.xib */,
-				DA9814A4194036B60083AB48 /* FirstViewController.h */,
-				DA9814A5194036B60083AB48 /* FirstViewController.m */,
-				DA9814A7194036B60083AB48 /* SecondViewController.h */,
-				DA9814A8194036B60083AB48 /* SecondViewController.m */,
-				DA9814C7194053EB0083AB48 /* ThirdViewController.h */,
-				DA9814C8194053EB0083AB48 /* ThirdViewController.m */,
+				DAAB88BE19410985008A16CE /* EditViewController.h */,
+				DAAB88BF19410985008A16CE /* EditViewController.m */,
+				DAAB891319514CC0008A16CE /* ErrandCell.h */,
+				DAAB891419514CC0008A16CE /* ErrandCell.m */,
+				DA9814A4194036B60083AB48 /* ResultViewController.h */,
+				DA9814A5194036B60083AB48 /* ResultViewController.m */,
+				DAAB890D19512B8E008A16CE /* ListViewController.h */,
+				DAAB890E19512B8E008A16CE /* ListViewController.m */,
 				DA9814AA194036B60083AB48 /* Images.xcassets */,
 				DA981496194036B60083AB48 /* Supporting Files */,
+				DAAB890719512353008A16CE /* whitespace.xcdatamodeld */,
+				DAAB890A19512575008A16CE /* Errand.h */,
+				DAAB890B19512575008A16CE /* Errand.m */,
 			);
 			path = whitespace;
 			sourceTree = "<group>";
@@ -258,7 +268,6 @@
 			files = (
 				DA9814AB194036B60083AB48 /* Images.xcassets in Resources */,
 				DA98149A194036B60083AB48 /* InfoPlist.strings in Resources */,
-				DAAB88C219410985008A16CE /* ViewController.xib in Resources */,
 				DA9814A3194036B60083AB48 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,11 +287,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAAB88C119410985008A16CE /* ViewController.m in Sources */,
-				DA9814A9194036B60083AB48 /* SecondViewController.m in Sources */,
-				DA9814C9194053EB0083AB48 /* ThirdViewController.m in Sources */,
+				DAAB88C119410985008A16CE /* EditViewController.m in Sources */,
+				DAAB890F19512B8E008A16CE /* ListViewController.m in Sources */,
+				DAAB890919512353008A16CE /* whitespace.xcdatamodeld in Sources */,
 				DA9814A0194036B60083AB48 /* AppDelegate.m in Sources */,
-				DA9814A6194036B60083AB48 /* FirstViewController.m in Sources */,
+				DAAB890C19512575008A16CE /* Errand.m in Sources */,
+				DAAB891519514CC0008A16CE /* ErrandCell.m in Sources */,
+				DAAB8912195132F4008A16CE /* DataManager.m in Sources */,
+				DA9814A6194036B60083AB48 /* ResultViewController.m in Sources */,
 				DA98149C194036B60083AB48 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,6 +516,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DAAB890719512353008A16CE /* whitespace.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DAAB890819512353008A16CE /* whitespace.xcdatamodel */,
+			);
+			currentVersion = DAAB890819512353008A16CE /* whitespace.xcdatamodel */;
+			path = whitespace.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DA981484194036B60083AB48 /* Project object */;
 }

@@ -6,13 +6,14 @@
 //  Copyright (c) 2014年 竹嶋健人. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "ResultViewController.h"
 
 
-@interface FirstViewController ()
+@interface ResultViewController ()
+
 @end
 
-@implementation FirstViewController
+@implementation ResultViewController
 
 - (void)viewDidLoad
 {
@@ -20,19 +21,9 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     
-    UIBarButtonItem *backBtn = [[UIBarButtonItem alloc]
-        initWithTitle:@"戻る"
-        style:UIBarButtonItemStyleBordered
-        target:nil
-        action:nil];
-    
-    self.navigationItem.backBarButtonItem = backBtn;
     
 }
 
-
-- (IBAction)performAddBtn:(id)sender {
-}
 
 - (void)didReceiveMemoryWarning
 {

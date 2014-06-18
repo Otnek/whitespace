@@ -9,6 +9,7 @@
 #import "SecondViewController.h"
 
 @interface SecondViewController ()
+@property (weak, nonatomic) IBOutlet UISegmentedControl *sc;
 
 @end
 
@@ -24,6 +25,8 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)SegChanged:(id)sender {
 }
 
 @end

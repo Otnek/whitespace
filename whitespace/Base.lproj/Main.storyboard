@@ -4,67 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller - ホーム-->
-        <scene sceneID="Ihh-ag-Nuc">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="mhR-E3-NfM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="ホーム" id="gzP-mF-tVj"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tw1-3j-M0g">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="TCI-hl-faC">
-                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="dwR-Sz-yYG" kind="relationship" relationship="rootViewController" id="LrQ-yr-TRQ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="leZ-Nb-FRR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1155" y="-541"/>
-        </scene>
-        <!--First View Controller - ホーム-->
-        <scene sceneID="io2-RL-lBN">
-            <objects>
-                <viewController id="dwR-Sz-yYG" customClass="FirstViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WTm-Uk-W07">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="Er6-I3-L45">
-                                <rect key="frame" x="10" y="73" width="301" height="29"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <segments>
-                                    <segment title="月"/>
-                                    <segment title="火"/>
-                                    <segment title="水"/>
-                                    <segment title="木"/>
-                                    <segment title="金"/>
-                                    <segment title="土"/>
-                                    <segment title="日"/>
-                                </segments>
-                            </segmentedControl>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="lnj-jI-wdf">
-                                <rect key="frame" x="0.0" y="118" width="329" height="402"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="ホーム" id="eIp-iN-nt1">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qte-4K-Uey">
-                            <connections>
-                                <action selector="performAddBtn:" destination="dwR-Sz-yYG" id="7Vg-a9-tEq"/>
-                                <segue destination="ogA-LJ-TpB" kind="modal" id="2C8-vA-Ai0"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="owe-Ek-hLw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-513" y="-541"/>
-        </scene>
         <!--Navigation Controller - リスト-->
         <scene sceneID="37i-j7-Qlb">
             <objects>
@@ -74,18 +13,72 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="usf-9L-E5v" kind="relationship" relationship="rootViewController" id="zgg-33-kge"/>
+                        <segue destination="0GX-C6-HsV" kind="relationship" relationship="rootViewController" id="3XX-3G-wyw"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V75-o9-qwx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1155" y="260"/>
         </scene>
-        <!--Navigation Controller - グラフ-->
+        <!--List View Controller - リスト-->
+        <scene sceneID="OIy-6d-o7a">
+            <objects>
+                <tableViewController id="0GX-C6-HsV" customClass="ListViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="iBY-LB-ae2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="V2L-Db-her" detailTextLabel="9SS-2T-8Az" style="IBUITableViewCellStyleValue1" id="85k-4y-T9i" customClass="ErrandCell">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="85k-4y-T9i" id="x8S-R1-dLU">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V2L-Db-her">
+                                            <rect key="frame" x="15" y="11" width="33" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9SS-2T-8Az">
+                                            <rect key="frame" x="241" y="11" width="44" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ogA-LJ-TpB" kind="push" id="y0a-Gg-qhf"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0GX-C6-HsV" id="Hhb-z2-GCG"/>
+                            <outlet property="delegate" destination="0GX-C6-HsV" id="P7m-P5-jmk"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="リスト" id="qc9-nq-vIQ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vqo-VK-3te">
+                            <connections>
+                                <segue destination="ogA-LJ-TpB" kind="modal" id="mWh-XK-wqU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Khu-2M-1k7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-513" y="260"/>
+        </scene>
+        <!--Navigation Controller - 評価-->
         <scene sceneID="ozf-4K-Ctj">
             <objects>
                 <navigationController definesPresentationContext="YES" id="xrK-41-vea" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="グラフ" id="aPa-4f-LjU"/>
+                    <tabBarItem key="tabBarItem" title="評価" id="aPa-4f-LjU"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hbI-nj-Ds8">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -97,26 +90,16 @@
             </objects>
             <point key="canvasLocation" x="-1155" y="1031"/>
         </scene>
-        <!--Third View Controller - グラフ-->
+        <!--Result View Controller - 評価-->
         <scene sceneID="hWR-c8-vOI">
             <objects>
-                <viewController id="hIP-5H-Ur6" customClass="ThirdViewController" sceneMemberID="viewController">
+                <viewController id="hIP-5H-Ur6" customClass="ResultViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eZn-dP-NNf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="5FC-5J-JN3">
-                                <rect key="frame" x="99" y="75" width="123" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="日"/>
-                                    <segment title="週"/>
-                                </segments>
-                            </segmentedControl>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="グラフ" id="mMQ-Da-j4H">
+                    <navigationItem key="navigationItem" title="評価" id="mMQ-Da-j4H">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vcN-jT-4W5">
                             <connections>
                                 <segue destination="ogA-LJ-TpB" kind="modal" id="T47-Qa-HgY"/>
@@ -128,62 +111,22 @@
             </objects>
             <point key="canvasLocation" x="-513" y="1031"/>
         </scene>
-        <!--Second View Controller - リスト-->
-        <scene sceneID="CCH-4G-6xu">
-            <objects>
-                <viewController id="usf-9L-E5v" customClass="SecondViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7tD-45-zd5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="kSS-wE-OF0">
-                                <rect key="frame" x="99" y="75" width="123" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="日"/>
-                                    <segment title="週"/>
-                                </segments>
-                            </segmentedControl>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="リスト" id="rfr-jJ-R3A">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZhL-QB-4dV">
-                            <connections>
-                                <segue destination="ogA-LJ-TpB" kind="modal" id="wKl-oR-ZLl"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QDS-Js-InA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-513" y="260"/>
-        </scene>
-        <!--View Controller-->
+        <!--Edit View Controller-->
         <scene sceneID="77U-Of-Pma">
             <objects>
-                <viewController id="aDN-nf-wxh" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="aDN-nf-wxh" customClass="EditViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ILp-jQ-D8R">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="EsH-EG-Lr3">
-                                <rect key="frame" x="169" y="87" width="97" height="30"/>
+                                <rect key="frame" x="184" y="87" width="116" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Vwl-D2-PNs">
-                                <rect key="frame" x="169" y="157" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="k7k-mg-fI9">
-                                <rect key="frame" x="169" y="230" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="getText:" destination="aDN-nf-wxh" eventType="editingDidEndOnExit" id="Ecv-rz-FL8"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カテゴリー" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LKP-hD-DHS">
                                 <rect key="frame" x="34" y="91" width="88" height="21"/>
@@ -193,28 +136,123 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="曜日" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hOV-tS-4y2">
-                                <rect key="frame" x="60" y="161" width="36" height="21"/>
+                                <rect key="frame" x="60" y="207" width="36" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="時間" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fmg-yW-Sbf">
-                                <rect key="frame" x="61" y="234" width="34" height="21"/>
+                                <rect key="frame" x="61" y="291" width="34" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" id="ee7-ws-s6n">
+                                <rect key="frame" x="82" y="137" width="320" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="aDN-nf-wxh" id="xD7-ex-Tx9"/>
+                                    <outlet property="delegate" destination="aDN-nf-wxh" id="VXx-id-GSe"/>
+                                </connections>
+                            </pickerView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" id="337-xM-9yA">
+                                <rect key="frame" x="10" y="320" width="136" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="424159991.50943798">
+                                    <!--2014-06-11 06:13:11 +0000-->
+                                </date>
+                                <timeZone key="timeZone" name="America/Los_Angeles">
+                                    <data key="data">
+VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
+y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
+5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
+8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
+AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
+DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
+HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
+KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
+OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
+Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
+VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
+Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
+cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
+f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
+</data>
+                                </timeZone>
+                                <connections>
+                                    <action selector="changeStartTime:" destination="aDN-nf-wxh" eventType="valueChanged" id="R5n-pL-aes"/>
+                                </connections>
+                            </datePicker>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" id="xS0-Hc-yjL">
+                                <rect key="frame" x="174" y="320" width="136" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="424245745.21177">
+                                    <!--2014-06-12 06:02:25 +0000-->
+                                </date>
+                                <timeZone key="timeZone" name="America/Los_Angeles">
+                                    <data key="data">
+VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
+y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
+5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
+8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
+AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
+DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
+HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
+KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
+OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
+Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
+VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
+Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
+cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
+f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
+</data>
+                                </timeZone>
+                                <connections>
+                                    <action selector="changeFinishTime:" destination="aDN-nf-wxh" eventType="valueChanged" id="1ST-dL-lwY"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="~" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="D7F-F3-3Ll">
+                                <rect key="frame" x="139" y="390" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IcH-JT-m2H">
+                                <rect key="frame" x="137" y="518" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="削除">
+                                    <color key="titleColor" red="1" green="0.29358871873302228" blue="0.11608928962828591" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="MjE-uv-4sk">
                         <barButtonItem key="leftBarButtonItem" title="キャンセル" id="0pJ-2D-MCp">
                             <connections>
-                                <action selector="tapbackBtn:" destination="aDN-nf-wxh" id="4sz-KJ-2yh"/>
+                                <action selector="tapbackBtn:" destination="aDN-nf-wxh" id="sRF-XZ-5yv"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="完了" id="fGt-U5-lX4"/>
+                        <barButtonItem key="rightBarButtonItem" title="完了" id="fGt-U5-lX4">
+                            <connections>
+                                <action selector="tapEnd:" destination="aDN-nf-wxh" id="hA2-WQ-ss3"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="categoryText" destination="EsH-EG-Lr3" id="Kqd-kP-mOK"/>
+                        <outlet property="finishTime" destination="xS0-Hc-yjL" id="8OJ-6R-HRL"/>
+                        <outlet property="startTime" destination="337-xM-9yA" id="xY2-2L-X9o"/>
+                        <outlet property="weekPicker" destination="ee7-ws-s6n" id="91b-tR-7se"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jl1-zx-ziK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -224,6 +262,7 @@
         <scene sceneID="LSt-xq-aps">
             <objects>
                 <navigationController definesPresentationContext="YES" id="ogA-LJ-TpB" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="gnd-Ye-JCN"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gUk-OB-792">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -246,7 +285,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="mhR-E3-NfM" kind="relationship" relationship="viewControllers" id="eHn-Zs-Srf"/>
                         <segue destination="tJc-wc-1NI" kind="relationship" relationship="viewControllers" id="Z9z-8s-YPq"/>
                         <segue destination="xrK-41-vea" kind="relationship" relationship="viewControllers" id="wqh-hi-rXy"/>
                     </connections>
@@ -263,6 +301,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="T47-Qa-HgY"/>
+        <segue reference="y0a-Gg-qhf"/>
     </inferredMetricsTieBreakers>
 </document>
