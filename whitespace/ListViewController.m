@@ -24,12 +24,17 @@
     if (!_fetchedResultsController) {
         NSManagedObjectContext *context = [[DataManager shareManager] managedObjectContext];
         NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Errand"];
-        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"name" ascending:YES];
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"starttime" ascending:YES];
         request.sortDescriptors = @[sortDescriptor];
         
-        NSFetchedResultsController *controller = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
+        //sectionNameKeyPathにはセクション分けに使う属性を入れる
+        NSFetchedResultsController *controller = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:context sectionNameKeyPath:@"week" cacheName:nil];
         controller.delegate = self;
-        [controller performFetch:nil];
+        
+        NSError *error = nil;
+        if (![controller performFetch:&error]) {
+            NSLog(@"%@", error);
+        }
         
         _fetchedResultsController = controller;
     }
@@ -81,25 +86,67 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 0;
+    return [[self.fetchedResultsController sections] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 0;
+    return [[[self.fetchedResultsController sections][section] objects] count];
 }
 
-/*
+//データの入ったセルを生成する
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    static NSString *CellIdentifier = @"Cell";
+    ErrandCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    [self configureCell:cell atIndexPath:indexPath];
     
     return cell;
 }
-*/
+
+//セルにデータを渡して処理させる
+-(void)configureCell:(ErrandCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    Errand *errand = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.errand = errand;
+}
+
+
+-(void)controllerWillChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.tableView beginUpdates];
+}
+
+
+-(void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath
+{
+    UITableView *tableview = self.tableView;
+    
+    switch (type) {
+        case NSFetchedResultsChangeInsert:
+            [tableview insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [tableview deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeUpdate:
+            [self configureCell:(id)[tableview cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            break;
+            
+        case NSFetchedResultsChangeMove:
+            [tableview deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [tableview insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+-(void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.tableView endUpdates];
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -110,18 +157,19 @@
 }
 */
 
-/*
-// Override to support editing the table view.
+ //Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        Errand *errand = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [self.fetchedResultsController.managedObjectContext deleteObject:errand];
+        [self.fetchedResultsController.managedObjectContext save:nil];
+        } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+            }
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -139,15 +187,5 @@
 }
 */
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
