@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ErrandCell : UITableViewCell
+@class Errand;
 
+@interface ErrandCell : UITableViewCell
+@property(strong, nonatomic) Errand *errand;
 @end

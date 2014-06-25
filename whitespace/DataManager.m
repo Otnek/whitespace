@@ -18,6 +18,7 @@
 
 @implementation DataManager
 
+
 + (instancetype)shareManager
 {
     static id manager;

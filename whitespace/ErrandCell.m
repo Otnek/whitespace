@@ -7,6 +7,9 @@
 //
 
 #import "ErrandCell.h"
+#import "Errand.h"
+
+
 
 @implementation ErrandCell
 
@@ -22,6 +25,7 @@
 - (void)awakeFromNib
 {
     // Initialization code
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -29,6 +33,13 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+-(void)setErrand:(Errand *)errand
+{
+    _errand = errand;
+    
+    self.textLabel.text = [NSString stringWithFormat:@"%@ %@ ~ %@", errand.category, errand.starttime, errand.finishtime];
 }
 
 @end
