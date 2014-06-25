@@ -7,12 +7,48 @@
 //
 
 #import "ListViewController.h"
+#import "DataManager.h"
+#import "ErrandCell.h"
+#import "Errand.h"
+#import "EditViewController.h"
 
-@interface ListViewController ()
-
+@interface ListViewController () <NSFetchedResultsControllerDelegate>
+@property(strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @end
 
 @implementation ListViewController
+
+
+-(NSFetchedResultsController *)fetchedResultsController
+{
+    if (!_fetchedResultsController) {
+        NSManagedObjectContext *context = [[DataManager shareManager] managedObjectContext];
+        NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Errand"];
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"name" ascending:YES];
+        request.sortDescriptors = @[sortDescriptor];
+        
+        NSFetchedResultsController *controller = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
+        controller.delegate = self;
+        [controller performFetch:nil];
+        
+        _fetchedResultsController = controller;
+    }
+    
+    return _fetchedResultsController;
+}
+
+//画面遷移先のデータ渡し
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([sender isKindOfClass:[ErrandCell class]]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        Errand *errand = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        UINavigationController *navigationController = segue.destinationViewController;
+        EditViewController *controller = (id)[navigationController topViewController];
+        controller.errand = errand;
+    }
+}
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {

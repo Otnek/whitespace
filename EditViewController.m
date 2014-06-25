@@ -8,7 +8,7 @@
 
 #import "EditViewController.h"
 #import "Errand.h"
-#import "AppDelegate.h"
+#import "DataManager.h"
 
 @interface EditViewController () <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>{
     NSArray *week;
@@ -39,6 +39,8 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    
     
     if(self.errand){
         self.title = @"編集";
@@ -136,8 +138,7 @@
 //ピッカーに表示する文字を返す
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component;
 {
-      week = @[@"月", @"火", @"水", @"木", @"金", @"土", @"日"];
-    
+    week = @[@"月", @"火", @"水", @"木", @"金", @"土", @"日"];
     return week[row];
     
 }
@@ -152,9 +153,13 @@
 //完了ボタンを押すと入力データを保存する
 - (IBAction)tapEnd:(id)sender {
     self.errand.category = self.categoryText.text;
+    self.errand.week = week[now_row];
+    self.errand.starttime = startstr;
+    self.errand.finishtime = finishstr;
     
+    [[[DataManager shareManager] managedObjectContext] save:nil];
     
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
