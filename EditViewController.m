@@ -81,8 +81,15 @@
 }
 
 
-//キャンセルボタンで戻る
+//キャンセルボタンで、新規の場合は削除し、変更の場合は元に戻す
 - (IBAction)tapbackBtn:(id)sender {
+    if (self.errand.isInserted) {
+        [[[DataManager shareManager] managedObjectContext] deleteObject:self.errand];
+    }else{
+        [[[DataManager shareManager] managedObjectContext] refreshObject:self.errand mergeChanges:NO];
+    }
+    
+    
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
