@@ -154,6 +154,8 @@
     self.errand.category = self.categoryText.text;
     
     
+    
+    
 }
 
 
