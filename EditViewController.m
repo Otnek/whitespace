@@ -46,7 +46,11 @@
         self.title = @"編集";
     }else {
         self.title = @"追加";
+        //用事が存在しないなら新規に作成
+        self.errand = [NSEntityDescription insertNewObjectForEntityForName:@"Errand" inManagedObjectContext:[[DataManager shareManager] managedObjectContext]];
     }
+    
+    
 }
 
 - (void)viewDidLoad
