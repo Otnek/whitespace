@@ -19,6 +19,26 @@
 @implementation ListViewController
 
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+}
+
+
+//画面遷移先のデータ渡し
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    if (indexPath) {
+        Errand *errand = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        UINavigationController *navigationcontroller = segue.destinationViewController;
+        EditViewController *controller = (id)[navigationcontroller topViewController];
+        controller.errand = errand;
+    }
+}
+
+
+
 -(NSFetchedResultsController *)fetchedResultsController
 {
     if (!_fetchedResultsController) {
@@ -30,29 +50,25 @@
         //sectionNameKeyPathにはセクション分けに使う属性を入れる
         NSFetchedResultsController *controller = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:context sectionNameKeyPath:@"week" cacheName:nil];
         controller.delegate = self;
+        _fetchedResultsController = controller;
         
         NSError *error = nil;
-        if (![controller performFetch:&error]) {
+        if (![_fetchedResultsController performFetch:&error]) {
             NSLog(@"%@", error);
         }
-        
-        _fetchedResultsController = controller;
     }
     
     return _fetchedResultsController;
 }
 
-//画面遷移先のデータ渡し
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+
+-(void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
-    if ([sender isKindOfClass:[ErrandCell class]]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        Errand *errand = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        UINavigationController *navigationController = segue.destinationViewController;
-        EditViewController *controller = (id)[navigationController topViewController];
-        controller.errand = errand;
-    }
+    [self.tableView beginUpdates];
 }
+
+
+
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -75,6 +91,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -86,13 +103,26 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return [[self.fetchedResultsController sections] count];
+    NSInteger returnValue = [[self.fetchedResultsController sections] count];
+    NSLog(@"%ld", (long)returnValue);
+//    if (returnValue != 0) {
+        return returnValue;
+//    }else{
+//        return 1;
+//    }
+}
+
+//セクション名を表示する
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+    return [sectionInfo name];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [[[self.fetchedResultsController sections][section] objects] count];
+        id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
+        return [sectionInfo numberOfObjects];
 }
 
 //データの入ったセルを生成する
@@ -113,9 +143,18 @@
 }
 
 
--(void)controllerWillChangeContent:(NSFetchedResultsController *)controller
+
+-(void)controller:(NSFetchedResultsController *)controller didChangeSection:(id<NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
 {
-    [self.tableView beginUpdates];
+    switch (type) {
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
 }
 
 
@@ -143,10 +182,9 @@
     }
 }
 
--(void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-{
-    [self.tableView endUpdates];
-}
+
+
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -170,6 +208,10 @@
             }
 }
 
+-(void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.tableView endUpdates];
+}
 
 /*
 // Override to support rearranging the table view.

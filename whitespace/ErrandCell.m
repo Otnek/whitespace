@@ -38,8 +38,9 @@
 -(void)setErrand:(Errand *)errand
 {
     _errand = errand;
+    self.textLabel.text = [NSString stringWithFormat:@"%@ %@ ~ %@", errand.category, errand.starttime,errand.finishtime];
     
-    self.textLabel.text = [NSString stringWithFormat:@"%@ %@ ~ %@", errand.category, errand.starttime, errand.finishtime];
+    
 }
 
 @end

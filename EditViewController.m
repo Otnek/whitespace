@@ -51,13 +51,36 @@
     }
     
     
+    
+    //時刻表示のフォーマッタをつくる
+    NSDateFormatter *df = [[NSDateFormatter alloc]init];
+    [df setDateFormat:@"HH:mm"];
+    
+    startstr = [df stringFromDate:self.startTime.date];
+    
+    //出力する
+    NSLog(@"%@", startstr);
+    
+    
+    //時刻をフォーマッタの書式で文字に変換する
+    finishstr = [df stringFromDate:self.finishTime.date];
+    
+    //出力する
+    NSLog(@"%@", finishstr);
+    
+    //pickerviewの初期値を与える
+    week = @[@"月", @"火", @"水", @"木", @"金", @"土", @"日"];
+    NSInteger val = [self.weekPicker selectedRowInComponent:0];
+    now_row = val;
+    
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-
+    
     self.categoryText.delegate = self;
     
     [self configureView];
@@ -72,7 +95,8 @@
         self.categoryText.text = self.errand.category;
         
         for(int i = 0 ; i < 7 ; i++){
-            if(self.errand.week == week[i]){
+            if([self.errand.week isEqualToString: week[i]])
+            {
                 [self.weekPicker selectRow:i inComponent:0 animated:NO];
             }
         }
@@ -149,7 +173,7 @@
 //ピッカーに表示する文字を返す
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component;
 {
-    week = @[@"月", @"火", @"水", @"木", @"金", @"土", @"日"];
+    
     return week[row];
     
 }
